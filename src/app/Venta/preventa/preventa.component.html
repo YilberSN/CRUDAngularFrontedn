@@ -1,0 +1,38 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Preventa</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formularioentradadatos">
+              
+                <div class="form-group">
+                    <label for="">Id del producto: </label>
+                    <input [(ngModel)]="preventa.idproducto" name ="idproducto" type="text" class="form-control" formControlName="idproducto" maxlength="10" required
+                    [ngStyle]="{'border': formularioentradadatos.get('idproducto').invalid ? '2px solid #919191 ' : '2px solid #00B100'}">
+                    <small class="form-text text-muted" *ngIf="formularioentradadatos.get('idproducto').invalid">{{mensajes()[0]}}</small>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Cantidad: </label>
+                    <input [(ngModel)]="preventa.cantidad" name ="cantidad" type="text" class="form-control" formControlName="cantidad" maxlength="5" required
+                    [ngStyle]="{'border': formularioentradadatos.get('cantidad').invalid ? '2px solid #919191 ' : '2px solid #00B100'}">
+                    <small class="form-text text-muted" *ngIf="formularioentradadatos.get('cantidad').invalid">{{mensajes()[1]}}</small>
+                </div>
+                <div class="form-group">
+                    <label>Id de la preventa: </label>
+                    <input [(ngModel)]="preventa.idpreventa" name ="idpreventa" type="text" class="form-control" formControlName="idpreventa" maxlength="10" required
+                    [ngStyle]="{'border': formularioentradadatos.get('idpreventa').invalid ? '2px solid #919191 ' : '2px solid #00B100'}">
+                    <small class="form-text text-muted" *ngIf="formularioentradadatos.get('idpreventa').invalid">{{mensajes()[2]}}</small>
+                </div>
+                <br>
+                <button (click)="Registrar()"class="btn btn-danger" [disabled]="formularioentradadatos.invalid">Guardar</button>
+            </form>
+
+
+            
+
+        </div>
+    </div>
+</div>
