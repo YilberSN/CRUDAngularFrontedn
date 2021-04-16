@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Preventa } from 'src/app/Modelo/Preventa'; //Modela un objeto preventa de los datos de ingreso
 import { ServicioService } from 'src/app/Servicio/servicio.service'; //Servicio para realizar las peticiones al backend
 import { FormGroup, FormControl, Validators} from '@angular/forms'; //Libreria para validar el formulario
+import Producto from 'src/app/Modelo/Producto';
 
 @Component({
   selector: 'app-preventa',
@@ -13,6 +14,7 @@ export class PreventaComponent implements OnInit {
 
   //Definimos las variables a utilizar en el componente
   preventa: Preventa = new Preventa();
+  productos:Producto[]=[];
 
   //Creamos un formulario
   formularioentradadatos = new FormGroup({
@@ -24,7 +26,11 @@ export class PreventaComponent implements OnInit {
   constructor(private router:Router, private servicio:ServicioService) { }
 
   ngOnInit(): void {
-  }
+    this.servicio.obtenerProductos()
+    .subscribe(data=>{
+      this.productos=data;
+  })
+}
 
   //Funcion para enviar los datos del formulario al api desarrollada en Spring Boot (Backend)
   Registrar(){
