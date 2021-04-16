@@ -1,27 +1,76 @@
-# PruebaCloudForAllF
+# Prueba Desarrollador CFA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+Esta es una prueba tecnica de frontend y backend:
 
-## Development server
+## 1. Construcción del servicio REST
+El servicio REST esta desarrollado con Spring Boot 2.4.4 con las siguientes caracteristicas:  
+#### Metodos implementados
+**GET** para obtener datos de las ventas.  
+**POST** para recibir los datos de una preventa (Id del producto, Cantidad del producto y Id de la preventa).  
+**PUT** Para realizar actualizaciones sobre los datos de una venta ya realizada en la base de datos (se puede actualizar desde el Frontend el dato de lugar de despacho).  
+**DELETE** Para borrar una venta ya realizada que se encuentre almacenada en la base de datos.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 2. Datos de entrada
+El  Frontend cuenta con un formulario de ingreso con los siguientes campos:  
+- Id del producto  
+- Cantidad del producto  
+- Id de la preventa  
 
-## Code scaffolding
+## 3. Validación de datos de entrada
+La validación se realizo en el Frontend en Angular con su libreria *Validaciones*.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 4. Respuesta de la aplicación ante una venta
+#### Venta Correcta
+Si los datos de entrada corresponden adecuadamente y si se ingreso el id de un producto ofertado (ver tabla de productos), el servicio REST retorna un mensaje con la siguiente estructura:  
+- Id de la factura  
+- Costo individual del producto  
+- Cantidad  
+- Valor descontado  
+- Lugar de despacho  
 
-## Build
+#### Venta incorrecta
+Para simular una venta incorrecta el usuario puede ingresar un id de prodcuto que no se encuentre ofertado (ver tabla de productos), de esta manera se realiza la petición para tramitar un producto erroneo y al no encontrarlo el servicio REST retorna un mensaje indicando que **NO** es posible realizar la venta.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 5. Registro de datos de las ventas en una base de datos
+El servicio REST realiza el almacenamiento de los datos de una venta valida por medio de un mapeo ORM hacia la base de datos POSTGRESQL en Heroku.
 
-## Running unit tests
+## 6. Frontend y Backend
+El desarrollo del Frontend se hizo en Angular 11.2.8.  
+El repositorio con el código fuente desarrollado se encuentra disponible en:  
+[https://github.com/YilberSN/CFABackEnd.git](https://github.com/YilberSN/CFABackEnd.git)  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+El desarrollo del Backend se realizo en Spring Boot 2.4.4.  
+El repositorio con el codigo fuente desarrollado se encuentra disponible en:  
+[https://github.com/YilberSN/CRUDAngularFrontend.git](https://github.com/YilberSN/CRUDAngularFrontend.git)
 
-## Running end-to-end tests
+## 7. Creación del proyecto
+El IDE utilizado fue Spring Tool Suite 4 para el desarrollo del Backend y Visual Studio Code 1.55.2 para el desarrollo del Frontend.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 8. Implementación Heroku
 
-## Further help
+Backend disponible en:  
+[https://yilber-prueba-cfa.herokuapp.com/](https://yilber-prueba-cfa.herokuapp.com/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Front disponible en:  
+[https://yilber-cfa-frontend.herokuapp.com/](https://yilber-prueba-cfa.herokuapp.com/)  
+
+
+## 9. Vista previa del proyecto
+
+#### Imagenes del Frontend
+![image](https://drive.google.com/uc?export=view&id=1uXVwp4_HU_sE6DC7XCI-xU8cmbtcWL2n)  
+
+![image](https://drive.google.com/uc?export=view&id=10-fPqhBPQ2kAn0XNeIFiyzPyvXcv8pH5)  
+
+
+#### Imagenes respuesta Backend
+
+![image](https://drive.google.com/uc?export=view&id=14LIMS24TqwIjet8iU56-S73tZ7IKjAt-)  
+
+![image](https://drive.google.com/uc?export=view&id=1W3I1qLastQXqssqrJtsmZvJ6pHZCYyQJ)  
+
+
+## 10. Autor
+Yilber Serrano  
+Ingeniero en Control  
+yilber.serrano@gmail.com  
