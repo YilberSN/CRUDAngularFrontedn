@@ -1,23 +1,29 @@
 
 
-  <div style="text-align: center;">
-    <h1>{{ title }} app is running!</h1>
-  </div>
 
-  <div class="container">
-    <button (click)="Listar()" class="btn btn-info">Listar</button>
-    <button (click)="Nuevo()" class="btn btn-info" style="margin-left:10px;">Nuevo</button>
+<div class="container">
+    <div class="card-header text-center">
+      <h1>Prueba desarrollador CFA</h1>
+    </div>
+    <br>
+    <div class="card-header text-center">
+      <button (click)="Listar()" class="btn btn-success">Listar las ventas realizadas</button>
+      <button (click)="Preventa()" class="btn btn-success" style="margin-left:10px;">Gestionar una venta (Preventa)</button>
+    </div>
+    <br>
+    <router-outlet></router-outlet>
 
-  <!-- Footer -->
-  <footer>
-    Yilber Serrano <br>
-    yilber.serrano@gmail.com
-  </footer>
-  </div>
+    <!-- Footer -->
+    <footer class="card-header text-center">
+      Yilber Serrano <br>
+      yilber.serrano@gmail.com
+    </footer>
+
+</div>
 
 
 
 
 
 
-<router-outlet></router-outlet>
+

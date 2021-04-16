@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListarComponent } from './Venta/listar/listar.component';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,19 @@ import { ListarComponent } from './Venta/listar/listar.component';
 })
 export class AppComponent {
   title = 'PruebaCloudForAllF';
+  angForm: FormGroup;
 
-  constructor(private router:Router){}
+  constructor(private router:Router){
+
+  }
+  //Componente de listar las ventas
   Listar(){
     this.router.navigate(["listar"]);
   }
-  Nuevo(){
-    this.router.navigate(["agregar"]);
+
+  //Componente para agregar una venta nueva
+  Preventa(){
+    this.router.navigate(["preventa"]);
   }
+
 }

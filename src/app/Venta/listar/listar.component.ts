@@ -20,12 +20,12 @@ export class ListarComponent implements OnInit {
         this.ventas=data;
     })
   }
-
+  //Funcion editar ir al componente de editar la venta
   Editar(venta:Venta):void{
     localStorage.setItem("idventa", venta.idventa.toString());
     this.router.navigate(["editar"]);
   }
-
+  //Funcion para borrar la venta
   Borrar(venta:Venta){
     this.servicio.borrarVenta(venta)
     .subscribe(data=>{

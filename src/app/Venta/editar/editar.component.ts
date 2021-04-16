@@ -18,6 +18,7 @@ export class EditarComponent implements OnInit {
     this.Editar();
   }
 
+  //Funcion para cargar los datos de la venta al formulario
   Editar(){
     let idventa=localStorage.getItem("idventa");
     this.servicio.getVentaId(+idventa)
@@ -26,6 +27,7 @@ export class EditarComponent implements OnInit {
     })
   }
 
+  //Funcion para actualizr los datos
   Actualizar(venta:Venta){
     this.servicio.actualizarVenta(venta)
     .subscribe(data=>{
