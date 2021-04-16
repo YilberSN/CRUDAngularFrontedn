@@ -10,8 +10,10 @@ export class ServicioService {
 
   constructor(private http:HttpClient) { }
 
-  url='https://yilber-prueba-cfa.herokuapp.com/venta';
-  url_preventa='https://yilber-prueba-cfa.herokuapp.com/preventa';
+  url='http://yilber-prueba-cfa.herokuapp.com/venta';
+  url_preventa='http://yilber-prueba-cfa.herokuapp.com/preventa';
+  //url='http://localhost:8081/venta';
+  //url_preventa='http://localhost:8081/preventa';
 
   //Servicio/Peticion para gestionar una venta nueva (preventa) y validarla desde el API desarollada en Spring Boot (Backend)
   preventa(preventa:Preventa){
