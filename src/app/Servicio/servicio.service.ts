@@ -11,9 +11,9 @@ export class ServicioService {
 
   constructor(private http:HttpClient) { }
 
-  url='http://yilber-prueba-cfa.herokuapp.com/venta';
-  url_preventa='http://yilber-prueba-cfa.herokuapp.com/venta/preventa';
-  url_productos='http://yilber-prueba-cfa.herokuapp.com/venta/productos';
+  url='https://yilber-prueba-cfa.herokuapp.com/venta';
+  url_preventa='https://yilber-prueba-cfa.herokuapp.com/venta/preventa';
+  url_productos='https://yilber-prueba-cfa.herokuapp.com/venta/productos';
   //url='http://localhost:8081/venta';
   //url_preventa='http://localhost:8081/preventa';
 
